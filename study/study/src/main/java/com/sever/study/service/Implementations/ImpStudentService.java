@@ -31,26 +31,28 @@ public class ImpStudentService implements StudentService {
 
     // Override elements declared in a higher class
     @Override
-    public Student includeStudent(Student student) {
+    public Student includeStudent(Student newStudent) {
         // TODO Auto-generated method stub
-        return null;
+        return repository.save(newStudent);
     }
 
     @Override
     public List<Student> getAllStudents() {
         // TODO Auto-generated method stub
-        return null;
+        return repository.findAll();
     }
 
     @Override
     public Optional<Student> getStudentById(Long id) {
         // TODO Auto-generated method stub
-        return null;
+        return repository.findById(id);
     }
 
     @Override
     public Student updateSubjectById(Long id, Student student) {
         // TODO Auto-generated method stub
+        Student updatedStudent = repository.findById(id).get();
+
         return null;
     }
 
