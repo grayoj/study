@@ -16,7 +16,7 @@ import com.sever.study.model.Subject;
 public interface SubjectService {
     Subject includeSubject(Subject subject);
     List<Subject> getAllSubjects();
-    Optional<Subject> getSubjectsById();
+    Optional<Subject> getSubjectById();
     Optional<Subject> findAllSubjectById(Long id);
     Subject updateSubjectById(Long id, Subject subject);
     Subject deleteSubjectById(Long id);
