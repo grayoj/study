@@ -12,7 +12,6 @@ import javax.transaction.Transactional;
 
 // Import Models.
 import com.sever.study.model.Student;
-import com.sever.study.repository.StudentRepository;
 import com.sever.study.service.StudentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,39 +21,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
-public class ImpTeacherService implements StudentService {
+public class ImpTeacherService implements {
 
-    @Autowired
-    private StudentRepository repository;
-
-    @Override
-    public Student includeStudent(Student student) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public List<Student> getAllStudents() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Optional<Student> getStudentById(Long id) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Student updateStudentById(Long id, Student student) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Student deleteStudentById(Long id) {
-        // TODO Auto-generated method stub
-        return null;
-    }
     
 }
