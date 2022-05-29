@@ -4,11 +4,14 @@
  */
 package com.sever.study.controller;
 
+import java.util.List;
+
 import com.sever.study.model.Student;
 import com.sever.study.service.StudentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,5 +31,9 @@ public class StudentsController {
     public Student includeStudent(@RequestBody Student student) {
         return service.includeStudent(student);
     }
-    
+
+    @GetMapping()
+    public List<Student> getAllStudents() {
+        
+    }
 }
