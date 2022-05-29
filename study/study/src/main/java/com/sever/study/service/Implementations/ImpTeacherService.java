@@ -13,6 +13,7 @@ import javax.transaction.Transactional;
 // Import Models.
 import com.sever.study.model.Student;
 import com.sever.study.model.Teacher;
+import com.sever.study.repository.TeacherRepository;
 import com.sever.study.service.StudentService;
 import com.sever.study.service.TeacherService;
 
@@ -25,10 +26,14 @@ import org.springframework.stereotype.Service;
 @Transactional
 public class ImpTeacherService implements TeacherService {
 
+    @Autowired
+    private TeacherRepository repository;
+
+
     @Override
     public Teacher includeTeacher(Teacher teacher) {
         // TODO Auto-generated method stub
-        return null;
+        return repository.save(teacher);
     }
 
     @Override
