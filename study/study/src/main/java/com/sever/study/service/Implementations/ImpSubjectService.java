@@ -64,6 +64,8 @@ public class ImpSubjectService implements SubjectService {
     @Override
     public Subject deleteSubjectById(Long id) {
         // TODO Auto-generated method stub
-        return null;
+        Subject deletedSubject = repository.findById(id).get();
+        repository.delete(deletedSubject);
+        return deletedSubject;
     }
 }
