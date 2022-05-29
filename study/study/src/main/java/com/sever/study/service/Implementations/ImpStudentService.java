@@ -56,7 +56,7 @@ public class ImpStudentService implements StudentService {
         updatedStudent.setLastName(student.getLastName());
         updatedStudent.setEmail(student.getEmail());
         updatedStudent.setClassName(student.getClassName());
-        return null;
+        return repository.save(updatedStudent);
     }
 
     @Override
