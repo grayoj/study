@@ -1,6 +1,7 @@
 /**
  * Gerald Maduabuchi
- * Student controller
+ * Student controller.
+ * This Controller, implements the CRUD methods and REST architecture.
  */
 package com.sever.study.controller;
 
@@ -9,6 +10,7 @@ import java.util.List;
 import com.sever.study.model.Student;
 import com.sever.study.service.StudentService;
 
+// Required Imports.
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -40,16 +42,19 @@ public class StudentsController {
         return service.getAllStudents();
     }
 
+    // GET ID From Endpoint.
     @GetMapping("/{id}")
     public Student getStudentById(@PathVariable Long id) {
         return service.getStudentById(id).get();
     }
 
+    // PUT ID From Endpoint.
     @PutMapping("/{id}")
     public Student updateStudentById(@PathVariable Long id, @RequestBody Student student) {
         return service.updateStudentById(id, student);
     }
 
+    // DELETE ID From Endpoint.
     @DeleteMapping("/{id}")
     public Student deleteStudentById(@PathVariable Long id) {
         return service.deleteStudentById(id);
