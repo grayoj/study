@@ -34,6 +34,7 @@ public class StudentsController {
 
     @GetMapping()
     public List<Student> getAllStudents() {
-        
+        return service.getAllStudents();
     }
+    
 }
