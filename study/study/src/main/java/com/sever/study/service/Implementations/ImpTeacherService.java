@@ -25,25 +25,30 @@ public class ImpTeacherService implements TeacherService {
     @Override
     public Teacher includeTeacher(Teacher teacher) {
         // TODO Auto-generated method stub
-        return null;
+        return repository.save(teacher);
     }
 
     @Override
     public List<Teacher> getAllTeachers() {
         // TODO Auto-generated method stub
-        return null;
+        return repository.getAll();
     }
 
     @Override
     public Optional<Teacher> getTeacherById(Long id) {
         // TODO Auto-generated method stub
-        return null;
+        return repository.getById(id);
     }
 
+    // Update Teacher Method.
     @Override
     public Teacher updateTeacherById(Long id, Teacher teacher) {
         // TODO Auto-generated method stub
-        return null;
+        Teacher updatedTeacher = repository.getById(id).get();
+        updatedTeacher.setFirstName(teacher.getFirstName());
+        updatedTeacher.setLastName(teacher.getLastName());
+        updatedTeacher.setEmail(teacher.getEmail());
+        return repository.save(updatedTeacher);
     }
 
     @Override
