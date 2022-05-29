@@ -14,8 +14,13 @@ import java.util.Optional;
 import com.sever.study.model.Teacher;
 import com.sever.study.service.TeacherService;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 // Implement Service Function
 public class ImpTeacherService implements TeacherService {
+
+    // inject the object dependency implicitly
+    @Autowired
 
     @Override
     public Teacher includeTeacher(Teacher teacher) {
