@@ -1,5 +1,12 @@
+/**
+ * Gerald Maduabuchi
+ * Subject Model
+ */
+
+// Include Model Package
 package com.sever.study.model;
 
+// Import Java Utilities
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,34 +19,33 @@ import javax.persistence.ManyToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-
 @Entity
 public class Student {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String firstName;
-    private String lastName;
-    @Column(unique = true)
-    private String email;
-    private String className;
-    @JsonBackReference
-    @ManyToMany(mappedBy = "students")
-    private List<Subject> subjects = new ArrayList<>();
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String firstName;
+	private String lastName;
+	@Column(unique = true)
+	private String email;
+	private String className;
+	@JsonBackReference
+	@ManyToMany(mappedBy = "students")
+	private List<Subject> subjects = new ArrayList<>();
 
-    public Student() {
+	public Student() {
 
-    }
+	}
 
-    public Long getId() {
+	public Long getId() {
 		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -64,14 +70,14 @@ public class Student {
 		this.email = email;
 	}
 
-    public String getClassName() {
+	public String getClassName() {
 		return className;
 	}
 
 	public void setClassName(String className) {
 		this.className = className;
 	}
-	
+
 	public List<Subject> getSubjects() {
 		return subjects;
 	}
@@ -79,7 +85,7 @@ public class Student {
 	public void setSubjects(List<Subject> subjects) {
 		this.subjects = subjects;
 	}
-	
+
 	public void addSubject(Subject subject) {
 		this.subjects.add(subject);
 	}
