@@ -13,7 +13,9 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import com.sever.study.model.Subject;
+import com.sever.study.repository.StudentRepository;
 import com.sever.study.repository.SubjectRepository;
+import com.sever.study.repository.TeacherRepository;
 // Import SubjectService.
 import com.sever.study.service.SubjectService;
 
@@ -26,6 +28,10 @@ public class ImpSubjectService implements SubjectService {
 
     @Autowired
     private SubjectRepository repository;
+    @Autowired
+    private StudentRepository studentRepository;
+    @Autowired
+    private TeacherRepository teacherRepository;
 
     @Override
     public Subject includeSubject(Subject subject) {
