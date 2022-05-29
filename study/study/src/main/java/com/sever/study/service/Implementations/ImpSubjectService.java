@@ -36,7 +36,7 @@ public class ImpSubjectService implements SubjectService {
     @Override
     public Subject includeSubject(Subject subject) {
         // TODO Auto-generated method stub
-        return null;
+        return repository.save(subject);
     }
 
     @Override
