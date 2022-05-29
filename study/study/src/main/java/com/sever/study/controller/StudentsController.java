@@ -11,6 +11,7 @@ import com.sever.study.service.StudentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -47,5 +48,10 @@ public class StudentsController {
     @PutMapping("/{id}")
     public Student updateStudentById(@PathVariable Long id, @RequestBody Student student) {
         return service.updateStudentById(id, student);
+    }
+
+    @DeleteMapping("/{id}")
+    public Student deleteStudentById(@PathVariable Long id) {
+        return service.deleteStudentById(id);
     }
 }
