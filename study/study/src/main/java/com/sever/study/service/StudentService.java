@@ -19,7 +19,7 @@ public interface StudentService {
 
     Optional<Student> getStudentById(Long id);
 
-    Student updateSubjectById(Long id, Student student);
+    Student updateStudentById(Long id, Student student);
 
     Student deleteStudentById(Long id);
 }
