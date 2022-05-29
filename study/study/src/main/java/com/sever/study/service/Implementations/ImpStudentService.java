@@ -62,7 +62,9 @@ public class ImpStudentService implements StudentService {
     @Override
     public Student deleteStudentById(Long id) {
         // TODO Auto-generated method stub
-        return null;
+        Student deletedStudent = repository.findById(id).get();
+        repository.deleteById(id);
+        return deletedStudent;
     }
 
 }
