@@ -11,11 +11,9 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 // Import Models.
-import com.sever.study.model.Student;
 import com.sever.study.model.Subject;
 import com.sever.study.model.Teacher;
 import com.sever.study.repository.TeacherRepository;
-import com.sever.study.service.StudentService;
 import com.sever.study.service.TeacherService;
 
 import org.springframework.beans.factory.annotation.Autowired;
