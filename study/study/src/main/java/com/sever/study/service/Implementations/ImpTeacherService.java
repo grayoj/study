@@ -10,6 +10,7 @@ package com.sever.study.service.Implementations;
 import java.util.List;
 import java.util.Optional;
 
+import com.sever.study.model.Subject;
 // Import Model
 import com.sever.study.model.Teacher;
 import com.sever.study.service.TeacherService;
@@ -60,7 +61,12 @@ public class ImpTeacherService implements TeacherService {
     @Override
     public Teacher deleteTeacherById(Long id) {
         // TODO Auto-generated method stub
-        return null;
+        Teacher deletedTeacher = repository.getById(id).get();
+        for(Subject s: deletedTeacher.getSubjects()) {
+            s.setTeacher(null);
+        }
+        repository.delete(deletedTeacher);
+        return deletedTeacher;
     }
     
 }
