@@ -52,7 +52,10 @@ public class ImpStudentService implements StudentService {
     public Student updateSubjectById(Long id, Student student) {
         // TODO Auto-generated method stub
         Student updatedStudent = repository.findById(id).get();
-
+        updatedStudent.setFirstName(student.getFirstName());
+        updatedStudent.setLastName(student.getLastName());
+        updatedStudent.setEmail(student.getEmail());
+        updatedStudent.setClassName(student.getClassName());
         return null;
     }
 
