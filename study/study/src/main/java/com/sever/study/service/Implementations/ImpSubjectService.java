@@ -78,4 +78,12 @@ public class ImpSubjectService implements SubjectService {
     public Teacher getTeacherById(Long id) {
         return teacherRepository.findById(id).get();
     }
+
+    public Subject enrollStudent(Long id, String studentEmail) {
+        Subject subjectToUpdate = repository.getById(id);
+        Student studentToUpdate = studentRepository.getByEmail(studentEmail).get();
+        studentToUpdate.getSubjects().add(subjectToUpdate);
+        subjectToUpdate.getStudents().add(studentToUpdate);
+        return repository.save(subjectToUpdate);
+    }
 }
