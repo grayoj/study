@@ -16,5 +16,6 @@ public interface StudentService {
     Student includeStudent(Student student);
     List<Student> getAllStudents();
     Optional<Student> getStudentById(Long id);
-    
+    Student updateSubjectById(Long id, Student student);
+    Student deleteStudentById(Long id);
 }
