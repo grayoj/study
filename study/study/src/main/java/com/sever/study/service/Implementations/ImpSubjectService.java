@@ -52,12 +52,6 @@ public class ImpSubjectService implements SubjectService {
     }
 
     @Override
-    public Optional<Subject> findAllSubjectById(Long id) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
     public Subject updateSubjectById(Long id, Subject subject) {
         // TODO Auto-generated method stub
         return null;
