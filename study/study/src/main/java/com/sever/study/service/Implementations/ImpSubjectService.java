@@ -86,4 +86,14 @@ public class ImpSubjectService implements SubjectService {
         subjectToUpdate.getStudents().add(studentToUpdate);
         return repository.save(subjectToUpdate);
     }
+
+    public List<Student> getStudentsToEnroll(Long id) {
+        Subject subject = repository.findById(id).get();
+        List<Student> studentsToEnroll = studentRepository.findAll()
+                .stream()
+                .filter(student -> !subject.getStudents().contains(student))
+                .toList();
+
+        return studentsToEnroll;
+    }
 }
