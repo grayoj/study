@@ -54,7 +54,11 @@ public class ImpSubjectService implements SubjectService {
     @Override
     public Subject updateSubjectById(Long id, Subject subject) {
         // TODO Auto-generated method stub
-        return null;
+        Subject updatedSubject = repository.findById(id).get();
+        updatedSubject.setName(subject.getName());
+        updatedSubject.setStudents(subject.getStudents());
+        updatedSubject.setTeacher(subject.getTeacher());
+        return repository.save(updatedSubject);
     }
 
     @Override
