@@ -21,9 +21,11 @@ public interface TeacherService {
     List<Teacher> findAllTeachers();
     Optional<Teacher> findTeacherById(Long id);
 
-    // Update Teacher by id
+    // Update Teacher by id.
     Teacher updateTeacherById(Long id, Teacher teacher);
 
-    // Delete Teacher by id
+    // Edit Teacher by id.
+    Teacher EditTeacherById(Long id, Teacher teacher);
+    // Delete Teacher by id.
     Teacher deleteTeacherById(Long id);    
 }
