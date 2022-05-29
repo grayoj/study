@@ -12,6 +12,7 @@ import javax.transaction.Transactional;
 
 // Import Models.
 import com.sever.study.model.Student;
+import com.sever.study.model.Subject;
 import com.sever.study.model.Teacher;
 import com.sever.study.repository.TeacherRepository;
 import com.sever.study.service.StudentService;
@@ -68,7 +69,12 @@ public class ImpTeacherService implements TeacherService {
     @Override
     public Teacher deleteTeacherById(Long id) {
         // TODO Auto-generated method stub
-        return null;
+        Teacher deletedTeacher = repository.findById(id).get();
+        for(Subject s: deletedTeacher.getSubjects()) {
+            s.setTeacher(null);
+        }
+        repository.delete(deletedTeacher);
+        return deletedTeacher;
     }
 
     
