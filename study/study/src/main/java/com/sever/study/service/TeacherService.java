@@ -18,8 +18,8 @@ public interface TeacherService {
     Teacher includeTeacher(Teacher teacher);
 
     // List and Fetch Teachers by ID.
-    List<Teacher> findAllTeachers();
-    Optional<Teacher> findTeacherById(Long id);
+    List<Teacher> getAllTeachers();
+    Optional<Teacher> getTeacherById(Long id);
 
     // Update Teacher by id.
     Teacher updateTeacherById(Long id, Teacher teacher);
