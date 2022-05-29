@@ -12,7 +12,9 @@ import java.util.Optional;
 
 import javax.transaction.Transactional;
 
+import com.sever.study.model.Student;
 import com.sever.study.model.Subject;
+import com.sever.study.model.Teacher;
 import com.sever.study.repository.StudentRepository;
 import com.sever.study.repository.SubjectRepository;
 import com.sever.study.repository.TeacherRepository;
@@ -67,5 +69,13 @@ public class ImpSubjectService implements SubjectService {
         Subject deletedSubject = repository.findById(id).get();
         repository.delete(deletedSubject);
         return deletedSubject;
+    }
+
+    public Student getStudentByEmail(String email) {
+        return studentRepository.getByEmail(email).get();
+    }
+
+    public Teacher getTeacherById(Long id) {
+        return teacherRepository.findById(id).get();
     }
 }
