@@ -5,7 +5,7 @@
 // Import Package
 package com.sever.study.service;
 
-// Include Student Package.
+// Include Student Model.
 import com.sever.study.model.Student;
 
 public interface StudentService {
