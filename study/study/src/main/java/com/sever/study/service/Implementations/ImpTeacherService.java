@@ -10,13 +10,18 @@ package com.sever.study.service.Implementations;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import com.sever.study.model.Subject;
 // Import Model
 import com.sever.study.model.Teacher;
 import com.sever.study.service.TeacherService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
+@Transactional
 // Implement Service Function
 public class ImpTeacherService implements TeacherService {
 
