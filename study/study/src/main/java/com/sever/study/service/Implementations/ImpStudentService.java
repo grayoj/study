@@ -10,12 +10,25 @@ package com.sever.study.service.Implementations;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 // Import Study Model
 import com.sever.study.model.Student;
+import com.sever.study.repository.StudentRepository;
 import com.sever.study.service.StudentService;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 // Instantiate method
+@Service
+@Transactional
 public class ImpStudentService implements StudentService {
+
+    // Call @Autowired to inject object dependency implicitly.
+    @Autowired
+    private StudentRepository repository;
+
 
     @Override
     public Student includeStudent(Student student) {
