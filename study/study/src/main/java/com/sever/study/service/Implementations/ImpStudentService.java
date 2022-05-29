@@ -49,7 +49,8 @@ public class ImpStudentService implements StudentService {
     }
 
     @Override
-    public Student updateSubjectById(Long id, Student student) {
+    // Update Function
+    public Student updateStudentById(Long id, Student student) {
         // TODO Auto-generated method stub
         Student updatedStudent = repository.findById(id).get();
         updatedStudent.setFirstName(student.getFirstName());
