@@ -10,7 +10,6 @@ import java.util.List;
 import com.sever.study.model.Student;
 import com.sever.study.model.Subject;
 import com.sever.study.service.SubjectService;
-import com.sever.study.service.Implementations.ImpSubjectService;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
