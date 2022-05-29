@@ -12,7 +12,9 @@ import javax.transaction.Transactional;
 
 // Import Models.
 import com.sever.study.model.Student;
+import com.sever.study.model.Teacher;
 import com.sever.study.service.StudentService;
+import com.sever.study.service.TeacherService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +23,43 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
-public class ImpTeacherService implements {
+public class ImpTeacherService implements TeacherService {
+
+    @Override
+    public Teacher includeTeacher(Teacher teacher) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public List<Teacher> getAllTeachers() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Optional<Teacher> getTeacherById(Long id) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Teacher updateTeacherById(Long id, Teacher teacher) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Teacher EditTeacherById(Long id, Teacher teacher) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Teacher deleteTeacherById(Long id) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
     
 }
