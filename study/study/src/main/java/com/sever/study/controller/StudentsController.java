@@ -4,10 +4,13 @@
  */
 package com.sever.study.controller;
 
+import com.sever.study.model.Student;
 import com.sever.study.service.StudentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 // Import RestController Extensions.
 import org.springframework.web.bind.annotation.RestController;
@@ -20,5 +23,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class StudentsController {
     @Autowired
     private StudentService service;
+    
+    @PostMapping()
+    public Student includeStudent(@RequestBody Student student) {
+        return service.includeStudent(student);
+    }
     
 }
