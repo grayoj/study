@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class StudentsController {
     @Autowired
     private StudentService service;
-    
+
     @PostMapping()
     public Student includeStudent(@RequestBody Student student) {
         return service.includeStudent(student);
