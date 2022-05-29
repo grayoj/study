@@ -62,11 +62,4 @@ public class ImpSubjectService implements SubjectService {
         // TODO Auto-generated method stub
         return null;
     }
-
-    @Override
-    public Optional<Subject> getSubjectById() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-    
 }
