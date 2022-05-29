@@ -7,6 +7,7 @@ package com.sever.study.controller;
 
 import java.util.List;
 
+import com.sever.study.model.Student;
 import com.sever.study.model.Subject;
 import com.sever.study.service.SubjectService;
 
@@ -47,4 +48,18 @@ public class SubjectController {
     public Subject deleteSubjectById(@PathVariable Long id) {
         return service.deleteSubjectById(id);
     }
+
+    @GetMapping("/{id}/students")
+	public List<Student> getSubjectStudents(@PathVariable Long id) {
+		return service.getSubjectById(id).get().getStudents();
+	}
+
+    @GetMapping("/{id}/studentsToEnroll")
+	public List<Student> getStudentsToEnroll(@PathVariable Long id) {
+		return service.getStudentsToEnroll(id);
+	}
+
+
+	
+
 }
