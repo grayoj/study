@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 // Import RestController Extensions.
@@ -41,5 +42,10 @@ public class StudentsController {
     @GetMapping("/{id}")
     public Student getStudentById(@PathVariable Long id) {
         return service.getStudentById(id).get();
+    }
+
+    @PutMapping("/{id}")
+    public Student updateStudentById(@PathVariable Long id, @RequestBody Student student) {
+        return service.updateStudentById(id, student);
     }
 }
