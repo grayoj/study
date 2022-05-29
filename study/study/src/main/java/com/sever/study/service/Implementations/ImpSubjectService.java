@@ -13,14 +13,19 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import com.sever.study.model.Subject;
+import com.sever.study.repository.SubjectRepository;
 // Import SubjectService.
 import com.sever.study.service.SubjectService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
 public class ImpSubjectService implements SubjectService {
+
+    @Autowired
+    private SubjectRepository repository;
 
     @Override
     public Subject includeSubject(Subject subject) {
